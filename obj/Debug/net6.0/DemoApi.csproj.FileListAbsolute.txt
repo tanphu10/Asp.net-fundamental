@@ -86,3 +86,15 @@ D:\05_ASP.Net\DemoApi\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Se
 D:\05_ASP.Net\DemoApi\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\05_ASP.Net\DemoApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\05_ASP.Net\DemoApi\bin\Debug\net6.0\Dapper.dll
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.sourcelink.json
+D:\05_ASP.Net\DemoApi\bin\Debug\net6.0\en\DemoApi.resources.dll
+D:\05_ASP.Net\DemoApi\bin\Debug\net6.0\vi\DemoApi.resources.dll
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.Controllers.ProductController.en.resources
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.Controllers.ProductController.vi.resources
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.csproj.GenerateResource.cache
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\en\DemoApi.resources.dll
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\vi\DemoApi.resources.dll
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.Models.Product.en.resources
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.Models.Product.vi.resources
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.SharedResource.en.resources
+D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.SharedResource.vi.resources
