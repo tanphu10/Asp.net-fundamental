@@ -6,7 +6,6 @@ namespace DemoApi.Models
     {
         public APIDbContext(DbContextOptions<APIDbContext> options) : base(options)
         { }
-        public DbSet<Student> Students { get; set; }
 
     }
 }
