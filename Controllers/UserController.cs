@@ -24,9 +24,9 @@ namespace DemoApi.Controllers
         public UserController(UserManager<AppUser>
             userManager, IConfiguration configuration, SignInManager<AppUser> signInManager)
         {
-            _userManager = userManager;
-            _configuration = configuration;
             _signinManager = signInManager;
+            _configuration = configuration;
+            _userManager = userManager;
             _connectionString = configuration.GetConnectionString("DevConnection");
 
         }
@@ -105,6 +105,54 @@ namespace DemoApi.Controllers
                 return Ok();
             }
             return BadRequest();
+        }
+        [HttpPut("{id}/{roleName}/assign-to-roles")]
+        public async Task<IActionResult> AssignToRoles([Required] Guid id, [Required] string roleName)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                //if (connection.State == System.Data.ConnectionState.Closed)
+                await connection.OpenAsync();
+                var normalizedName = roleName.ToUpper();
+                var roleId = await connection.ExecuteScalarAsync<Guid?>($"SELECT [Id] FROM [AspNetRoles] WHERE [NormalizedName] = @{nameof(normalizedName)}", new { normalizedName });
+                if (!roleId.HasValue)
+                {
+                    roleId = Guid.NewGuid();
+                    await connection.ExecuteAsync($"INSERT INTO [AspNetRoles]([Id],[Name], [NormalizedName]) VALUES(@{nameof(roleId)},@{nameof(roleName)}, @{nameof(normalizedName)})",
+                       new { roleName, normalizedName });
+                }
+
+
+                await connection.ExecuteAsync($"IF NOT EXISTS(SELECT 1 FROM [AspNetUserRoles] WHERE [UserId] = @userId AND [RoleId] = @{nameof(roleId)}) " +
+                    $"INSERT INTO [AspNetUserRoles]([UserId], [RoleId]) VALUES(@userId, @{nameof(roleId)})",
+                    new { userId = user.Id, roleId });
+                return Ok();
+            }
+        }
+        [HttpGet("{id}/roles")]
+        public async Task<IActionResult> GetUserRole(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            var res = await _userManager.GetRolesAsync(user);
+            return Ok(res);
+        }
+        [HttpDelete("{id}/{roleName}/remove-roles")]
+        [ValidateModel]
+        public async Task<IActionResult> RemoveRoleToUser([Required] Guid id, [Required] string roleName)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                    await connection.OpenAsync();
+                var normalizedName = roleName.ToUpper();
+                var roleId = await connection.ExecuteScalarAsync<Guid?>($"SELECT [Id] FROM [AspNetRole] WHERE [NormalizedName]=@{nameof(normalizedName)}", new { normalizedName });
+                if (roleId.HasValue)
+
+                    await connection.ExecuteAsync($"DELETE FROM [AspNetUserRoles] WHERE [UserId]=@userId AND [RoleId]=@{nameof(roleId)}", new { userId = user.Id, roleId });
+                return Ok();
+            }
         }
     }
 }

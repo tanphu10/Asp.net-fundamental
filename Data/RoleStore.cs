@@ -29,7 +29,6 @@ namespace DemoApi.Data
             //    role.Id = Guid.NewGuid();
             //    await connection.ExecuteAsync($@"INSERT INTO [AspNetRoles] ([Id],[Name],[NormalizedName])
             //    VALUES(@{nameof(AppRole.Id)},@{nameof(AppRole.Name)},@{nameof(AppRole.NormalizedName)});", role);
-
             //}
             return IdentityResult.Success;
         }

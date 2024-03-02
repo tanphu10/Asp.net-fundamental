@@ -30,7 +30,7 @@ namespace DemoApi.Controllers
             using (
                 var conn = new SqlConnection(_connectionString))
             {
-                if (conn.State == System.Data.ConnectionState.Open)
+                if (conn.State == System.Data.ConnectionState.Closed)
                     conn.OpenAsync();
                 var parameters = new DynamicParameters();
                 var res = await conn.QueryAsync<Function>("Get_Function_All", parameters, null
