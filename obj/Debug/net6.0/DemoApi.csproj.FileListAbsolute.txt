@@ -98,3 +98,4 @@ D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.Models.Product.en.resou
 D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.Models.Product.vi.resources
 D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.SharedResource.en.resources
 D:\05_ASP.Net\DemoApi\obj\Debug\net6.0\DemoApi.Resources.SharedResource.vi.resources
+D:\05_ASP.Net\DemoApi\bin\Debug\net6.0\Newtonsoft.Json.dll
