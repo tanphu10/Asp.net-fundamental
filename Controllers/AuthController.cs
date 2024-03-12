@@ -18,9 +18,9 @@ using WebAPICoreDapper.ViewModels;
 namespace DemoApi.Controllers
 {
     [Route("api/{culture}/[controller]")]
+    [Authorize]
     [ApiController]
     [MiddlewareFilter(typeof(LocalizationPipeline))]
-    [Authorize]
     public class AuthController : ControllerBase
     {
         private readonly IConfiguration _configuration;

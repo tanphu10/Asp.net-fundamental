@@ -4,6 +4,7 @@ using DemoApi.Extensions;
 using DemoApi.Filters;
 using DemoApi.Models;
 using DemoApi.Resources;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Localization;
@@ -18,6 +19,7 @@ using System.Text.RegularExpressions;
 namespace DemoApi.Controllers
 {
     [Route("api/{culture}/[controller]")]
+    [Authorize]
     [ApiController]
     [MiddlewareFilter(typeof(LocalizationPipeline))]
     public class ProductController : ControllerBase

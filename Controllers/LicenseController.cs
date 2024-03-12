@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using DemoApi.Models;
 using DemoApi.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ using System.Data;
 namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class LicenseController : ControllerBase
     {

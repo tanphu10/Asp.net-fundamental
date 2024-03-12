@@ -2,6 +2,7 @@
 using DemoApi.Dtos;
 using DemoApi.Filters;
 using DemoApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -13,6 +14,7 @@ using System.Text.RegularExpressions;
 namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class FunctionController : ControllerBase
     {

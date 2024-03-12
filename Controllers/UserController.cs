@@ -14,6 +14,7 @@ using System.Data;
 namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -30,7 +31,8 @@ namespace DemoApi.Controllers
             _connectionString = configuration.GetConnectionString("DevConnection");
 
         }
-        [HttpGet]
+        [HttpGet, Authorize]
+        [ClaimRequirementAttribuite(FunctionCode.SYSTEM_USER,ActionCode.VIEW)]
         public async Task<IActionResult> Get()
         {
             using (var conn = new SqlConnection(_connectionString))
@@ -42,7 +44,7 @@ namespace DemoApi.Controllers
                 return Ok(result);
             }
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public async Task<IActionResult> Get(string id)
         {
             return Ok(await _userManager.FindByIdAsync(id));
