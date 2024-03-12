@@ -1,10 +1,8 @@
 ﻿using Dapper;
+using DemoApi.Data.Models;
 using DemoApi.Dtos;
-using DemoApi.Extensions;
 using DemoApi.Filters;
-using DemoApi.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;

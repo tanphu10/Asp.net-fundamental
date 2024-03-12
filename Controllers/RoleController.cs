@@ -1,15 +1,13 @@
 ﻿using Dapper;
+using DemoApi.Data.Models;
 using DemoApi.Dtos;
 using DemoApi.Filters;
-using DemoApi.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Text.RegularExpressions;
 
 namespace DemoApi.Controllers
 {

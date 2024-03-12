@@ -1,12 +1,10 @@
 ﻿using Dapper;
-using DemoApi.Models;
-using DemoApi.ViewModels;
+using DemoApi.Data.Models;
+using DemoApi.Data.ViewModels;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace DemoApi.Controllers

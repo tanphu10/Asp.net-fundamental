@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DemoApi.Data.Models;
 using DemoApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;

@@ -1,4 +1,4 @@
-﻿namespace DemoApi.Models
+﻿namespace DemoApi.Data.Models
 {
     public class Action
     {

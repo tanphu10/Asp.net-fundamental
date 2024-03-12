@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DemoApi.Models
+namespace DemoApi.Data.Models
 {
     public class APIDbContext : DbContext
     {

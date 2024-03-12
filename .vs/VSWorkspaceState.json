@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github\\workflows",
     "\\Controllers",
-    "\\Dtos",
-    "\\Models"
+    "\\Dtos"
   ],
   "SelectedNode": "\\Controllers\\ProductController.cs",
   "PreviewInSolutionExplorer": false

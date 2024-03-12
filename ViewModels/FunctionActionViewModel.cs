@@ -1,4 +1,4 @@
-﻿namespace DemoApi.ViewModels
+﻿namespace DemoApi.Data.ViewModels
 {
     public class FunctionActionViewModel
     {

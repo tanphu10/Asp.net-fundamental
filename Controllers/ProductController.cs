@@ -1,18 +1,16 @@
 ﻿using Dapper;
+using DemoApi.Data.Models;
 using DemoApi.Dtos;
 using DemoApi.Extensions;
 using DemoApi.Filters;
-using DemoApi.Models;
 using DemoApi.Resources;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Localization;
-using System;
 using System.Data;
 using System.Globalization;
-using System.Reflection.Metadata;
-using System.Text.RegularExpressions;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

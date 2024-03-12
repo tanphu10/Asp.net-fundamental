@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebAPICoreDapper.ViewModels
+namespace DemoApi.Data.ViewModels
 {
     public class RegisterViewModel
     {

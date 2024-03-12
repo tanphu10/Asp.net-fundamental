@@ -1,5 +1,4 @@
-﻿namespace DemoApi.Models
-{
+﻿namespace DemoApi.Data.Models
     public class AppRole
     {
         public Guid Id { get; set; }

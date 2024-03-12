@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace DemoApi.ViewModels
+namespace DemoApi.Data.ViewModels
 {
     public class PermissionViewModel
 
